@@ -7,6 +7,7 @@ import edu.up.cs371.soccer_application.soccerPlayer.SoccerPlayer;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -16,8 +17,19 @@ import java.util.*;
  * @version *** put date of completion here ***
  *
  */
+
 public class SoccerDatabase implements SoccerDB {
 
+    HashMap<String, SoccerPlayer> theMap = null;
+
+    public SoccerDatabase()
+    {
+
+        theMap = new HashMap<String, SoccerPlayer>();
+        SoccerPlayer p1 = new SoccerPlayer(String,String,int,String)
+        String Key = SoccerPlayer p1;
+    }
+    Map<String, >
     /**
      * add a player
      *
