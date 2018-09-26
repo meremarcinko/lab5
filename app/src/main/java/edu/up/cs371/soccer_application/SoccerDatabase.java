@@ -22,24 +22,25 @@ public class SoccerDatabase implements SoccerDB {
 
     HashMap<String, SoccerPlayer> theMap = null;
 
-    public SoccerDatabase()
-    {
-
-        theMap = new HashMap<String, SoccerPlayer>();
-        SoccerPlayer p1 = new SoccerPlayer(String,String,int,String)
-        String Key = SoccerPlayer p1;
+    public String name (String firstName, String lastName) {
+        return firstName + " ## " + lastName;
     }
-    Map<String, >
+
     /**
      * add a player
      *
      * @see SoccerDB#addPlayer(String, String, int, String)
      */
     @Override
-	public boolean addPlayer(String firstName, String lastName,
-			int uniformNumber, String teamName) {
-        return false;
-	}
+    public boolean addPlayer(String firstName, String lastName,
+                             int uniformNumber, String teamName) {
+
+        if (theMap.containsKey(name(firstName, lastName))) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     /**
      * remove a player
