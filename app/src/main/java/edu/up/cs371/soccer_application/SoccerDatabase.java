@@ -22,7 +22,7 @@ public class SoccerDatabase implements SoccerDB {
 
     HashMap<String, SoccerPlayer> theMap = null;
 
-    public String name (String firstName, String lastName) {
+    public String name(String firstName, String lastName) {
         return firstName + " ## " + lastName;
     }
 
@@ -34,10 +34,12 @@ public class SoccerDatabase implements SoccerDB {
     @Override
     public boolean addPlayer(String firstName, String lastName,
                              int uniformNumber, String teamName) {
-
         if (theMap.containsKey(name(firstName, lastName))) {
             return false;
         } else {
+            String key = name(firstName, lastName);
+            SoccerPlayer newSoccer = new SoccerPlayer(firstName, lastName, uniformNumber, teamName);
+            theMap.put(key, newSoccer);
             return true;
         }
     }
@@ -57,9 +59,16 @@ public class SoccerDatabase implements SoccerDB {
      *
      * @see SoccerDB#getPlayer(String, String)
      */
+
+    HashMap<String, SoccerPlayer> getPlayerMap = null;
+
     @Override
 	public SoccerPlayer getPlayer(String firstName, String lastName) {
-        return null;
+        if (getPlayerMap.containsKey(name(firstName, lastName))) {
+            return true;
+        } else {
+            return null;
+        }
     }
 
     /**
