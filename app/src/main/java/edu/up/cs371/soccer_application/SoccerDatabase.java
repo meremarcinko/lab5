@@ -20,7 +20,7 @@ import java.util.*;
 
 public class SoccerDatabase implements SoccerDB {
 
-    HashMap<String, SoccerPlayer> theMap = null;
+    HashMap<String, SoccerPlayer> theMap = new HashMap<>();
 
     public String name(String firstName, String lastName) {
         return firstName + " ## " + lastName;
@@ -59,13 +59,11 @@ public class SoccerDatabase implements SoccerDB {
      *
      * @see SoccerDB#getPlayer(String, String)
      */
-
-    HashMap<String, SoccerPlayer> getPlayerMap = null;
-
     @Override
 	public SoccerPlayer getPlayer(String firstName, String lastName) {
-        if (getPlayerMap.containsKey(name(firstName, lastName))) {
-            return true;
+        if (theMap.containsKey(name(firstName, lastName))) {
+            String key = name(firstName, lastName);
+            return theMap.get(key);
         } else {
             return null;
         }
