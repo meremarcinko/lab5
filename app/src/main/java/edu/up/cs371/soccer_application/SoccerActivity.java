@@ -177,7 +177,7 @@ public class SoccerActivity extends ActionBarActivity {
     }
 
     /**
-     * update all EditTexts related to the current player with relevant informatino
+     * update all EditTexts related to the current player with relevant information
      *
      * @param showAll whether to show items other than first and last name
      */
