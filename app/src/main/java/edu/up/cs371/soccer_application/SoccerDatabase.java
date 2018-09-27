@@ -206,7 +206,13 @@ public class SoccerDatabase implements SoccerDB {
     @Override
     // report number of players on a given team (or all players, if null)
 	public int numPlayers(String teamName) {
-        return -1;
+        if(teamName == null){
+            return theMap.size();
+            //return -1;
+        } else {
+            int totalPlayers; //fix
+            return totalPlayers;
+        }
 	}
 
     /**
