@@ -211,21 +211,14 @@ public class SoccerDatabase implements SoccerDB {
             return -1;
         } else {
             int totalPlayers = 0;
-            totalPlayers = teamName.length();
 
-            /**
-            Set entrySet = theMap.entrySet();
-            Iterator it = entrySet.iterator();
-            if (theMap.equals(teamName)){
-                totalPlayers++;
-            }
-            /**
-            for(String key : theMap.keySet()){
-                if (theMap.equals(teamName)){
+
+            for(SoccerPlayer s : theMap.values()){
+                if (s.getTeamName().equals(teamName)){
                     totalPlayers++;
                 }
             }
-             */
+
             return totalPlayers;
         }
 	}
@@ -238,6 +231,21 @@ public class SoccerDatabase implements SoccerDB {
 	// get the nTH player
 	@Override
     public SoccerPlayer playerNum(int idx, String teamName) {
+
+        int counter = -1; //keeps track of the right idx in the theMap
+        for(SoccerPlayer s : theMap.values()){
+            if(teamName == null) {
+                counter++;
+            } else if (s.getTeamName().equals(teamName)) {
+                counter++;
+            }
+
+            if(counter == idx){
+                return s;
+            }
+
+        }
+
         return null;
     }
 
