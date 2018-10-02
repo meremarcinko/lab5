@@ -207,10 +207,25 @@ public class SoccerDatabase implements SoccerDB {
     // report number of players on a given team (or all players, if null)
 	public int numPlayers(String teamName) {
         if(teamName == null){
-            return theMap.size();
-            //return -1;
+            //return theMap.size();
+            return -1;
         } else {
-            int totalPlayers; //fix
+            int totalPlayers = 0;
+            totalPlayers = teamName.length();
+
+            /**
+            Set entrySet = theMap.entrySet();
+            Iterator it = entrySet.iterator();
+            if (theMap.equals(teamName)){
+                totalPlayers++;
+            }
+            /**
+            for(String key : theMap.keySet()){
+                if (theMap.equals(teamName)){
+                    totalPlayers++;
+                }
+            }
+             */
             return totalPlayers;
         }
 	}
